@@ -1,3 +1,16 @@
 .searchBar{
-    
+    .type{
+        button{
+            padding: 16px 36px;
+            border: 1px solid #999;
+            background-color: white;
+            text-transform: capitalize;
+            cursor: pointer;
+            &.active{
+                background-color: black;
+                color: white;
+            }
+            
+        }
+    }
 }
