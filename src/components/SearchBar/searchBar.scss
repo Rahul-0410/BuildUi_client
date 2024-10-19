@@ -57,7 +57,7 @@
         width: 200px;
         &:nth-child(2),
         &:nth-child(3) {
-          width: 200px;
+          width: 180px;
         }
       }
 
@@ -81,6 +81,8 @@
       @include sm{
         padding: 10px;
       }
+
+     
 
       img {
         width: 24px;

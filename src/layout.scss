@@ -12,15 +12,15 @@
     flex-direction: column;
 
     @include lg{
-        background-color: coral;
+        // background-color: coral;
         max-width: 900px;
     }
     @include md{
-        background-color: cornflowerblue;
+        // background-color: cornflowerblue;
         max-width: 730px;
     }
     @include sm{
-        background-color: red;
+        // background-color: red;
         max-width: 620px;
     }
 
