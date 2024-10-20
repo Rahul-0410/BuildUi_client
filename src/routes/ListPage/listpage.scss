@@ -1,0 +1,13 @@
+
+.listPage{
+    display: flex;
+
+    .listContainer{
+            flex: 3;
+    }
+
+    .mapContainer{
+        flex: 2;
+        background-color: #fcf5f3;
+    }
+}
