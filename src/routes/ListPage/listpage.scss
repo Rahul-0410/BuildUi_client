@@ -5,18 +5,30 @@
 
     .listContainer{
         flex: 3;
-        overflow-y: scroll;
-
-            .wrapper{
-                padding-right: 40px;
-                display: flex;
-                flex-direction: column;
-                gap: 50px;
-            }
+        height: 100%;
+        
+        .wrapper {
+            height: 100%;
+            padding-right: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            overflow-y: scroll;
+            padding-bottom: 50px;
+        
+            /* Hide scrollbar for WebKit browsers */
+            scrollbar-width: none; 
+        }
+        
+        .wrapper::-webkit-scrollbar {
+            display: none; 
+        }
+        
     }
 
     .mapContainer{
         flex: 2;
+        height: 100%;
         background-color: #fcf5f3;
     }
 }
