@@ -26,7 +26,9 @@ function SinglePage() {
                     <span>{userData.name}</span>
                   </div>
               </div>
-              <div className="bottom"></div>
+              <div className="bottom">
+                {singlePostData.description}
+              </div>
             </div>
           </div>
         </div>
