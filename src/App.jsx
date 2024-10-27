@@ -5,6 +5,7 @@ import Layout from "./routes/layout/Layout"
 import SinglePage from "./routes/singlePage/SinglePage"
 import LoginPage from "./routes/login/LoginPage"
 import Profile from "./routes/profile/Profile"
+import RegisterPage from "./routes/register/Register"
 function App() {
   const router= createBrowserRouter([
     {
@@ -28,6 +29,10 @@ function App() {
         {
           path:"/login",
           element: <LoginPage/>
+        },
+        {
+          path:"/register",
+          element: <RegisterPage/>
         },
         {
           path:"/profile",

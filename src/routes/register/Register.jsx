@@ -1,17 +1,18 @@
 import React from 'react'
-import './loginPage.scss'
-import { Link } from 'react-router-dom'
+import './register.scss';
+import { Link } from 'react-router-dom';
 
-function LoginPage() {
+function RegisterPage() {
   return (
-    <div className="login">
+    <div className="register">
       <div className="formContainer">
         <form>
-          <h1>Welcome back</h1>
+          <h1>Create an Account</h1>
           <input name="username" type="text" placeholder="Username" />
+          <input name="email" type="text" placeholder="Email" />
           <input name="password" type="password" placeholder="Password" />
-          <button>Login</button>
-          <Link to="/register">{"Don't"} you have an account?</Link>
+          <button >Register</button>
+          <Link to="/login">Do you have an account?</Link>
         </form>
       </div>
       <div className="imgContainer">
@@ -21,4 +22,4 @@ function LoginPage() {
   )
 }
 
-export default LoginPage
+export default RegisterPage
