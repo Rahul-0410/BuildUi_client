@@ -56,7 +56,14 @@ nav {
 
     @include md {
       background-color: transparent;
+      
     }
+
+    @include lg{
+      flex: 1.5;
+    }
+    
+    
 
     a {
       padding: 12px 24px;
