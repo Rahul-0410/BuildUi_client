@@ -1,8 +1,22 @@
+import { useNavigate } from "react-router-dom";
 import Chat from "../../components/chat/Chat";
 import List from "../../components/list/List";
+import apiRequest from "../../lib/apiRequest";
 import "./profile.scss";
 
 function ProfilePage() {
+  const navigate= useNavigate();
+  const handleLogout= async()=>{
+
+    try {
+      const res= await apiRequest.post("/auth/logout");
+      localStorage.removeItem("user");
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+      
+    }
+  }
   return (
     <div className="profilePage">
       <div className="details">
