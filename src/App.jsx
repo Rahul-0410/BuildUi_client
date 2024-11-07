@@ -52,6 +52,7 @@ function App() {
     //     <HomePage/>
     //   </div>
     // </div>
+    
     <RouterProvider router={router}/>
   )
 }
