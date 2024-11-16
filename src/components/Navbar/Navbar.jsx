@@ -41,11 +41,10 @@ function Navbar() {
           </div>
         ) : (
           <>
-            <a href="/">Sign in</a>
-            <a href="/" className="register">
+            <Link to={'/login'}>Sign in</Link>
+            <Link to='/register' className="profile register1">
               Sign up
-            </a>
-          </>
+            </Link>   </>
         )}
           <div className='menuIcon'>
             <img src="/menu.png" alt="bar" onClick={()=> setOpen((prev)=>!prev)} />

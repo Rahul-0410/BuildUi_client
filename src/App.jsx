@@ -1,7 +1,7 @@
 import HomePage from "./routes/homePage/HomePage"
 import { createBrowserRouter,RouterProvider} from "react-router-dom"
 import ListPage from "./routes/ListPage/ListPage"
-import Layout from "./routes/layout/Layout"
+import {Layout, RequireAuth} from "./routes/layout/Layout"
 import SinglePage from "./routes/singlePage/SinglePage"
 import LoginPage from "./routes/login/LoginPage"
 import Profile from "./routes/profile/Profile"
@@ -40,6 +40,17 @@ function App() {
         }
       ]
     },
+    {
+      path:"/",
+      element:<RequireAuth/>,
+
+      children:[
+        {
+          path:"/profile",
+          element: <Profile/>
+        }
+      ]
+    }
   ])
   return (
     // <div className="layout">

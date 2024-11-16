@@ -4,13 +4,13 @@ import List from "../../components/list/List";
 import apiRequest from "../../lib/apiRequest";
 import "./profile.scss";
 import { AuthContext } from "../../context/AuthContext";
-import { useContext } from "react";
+import { useContext} from "react";
 
 function ProfilePage() {
 
   const {updateUser,currentUser}= useContext(AuthContext);
 
-  const navigate= useNavigate();
+
   const handleLogout= async()=>{
 
 
@@ -25,7 +25,7 @@ function ProfilePage() {
     }
   }
   return (
-    <div className="profilePage">
+  <div className="profilePage">
       <div className="details">
         <div className="wrapper">
           <div className="title">
