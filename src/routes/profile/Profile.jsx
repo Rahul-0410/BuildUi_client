@@ -1,46 +1,43 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Chat from "../../components/chat/Chat";
 import List from "../../components/list/List";
 import apiRequest from "../../lib/apiRequest";
 import "./profile.scss";
 import { AuthContext } from "../../context/AuthContext";
-import { useContext} from "react";
+import { useContext } from "react";
 
 function ProfilePage() {
+  const { updateUser, currentUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-  const {updateUser,currentUser}= useContext(AuthContext);
-
-
-  const handleLogout= async()=>{
-
-
+  const handleLogout = async () => {
     try {
       await apiRequest.post("/auth/logout");
-      // localStorage.removeItem("user");
       updateUser(null);
       navigate("/");
     } catch (error) {
       console.log(error);
-      
     }
+  };
+
+  if (!currentUser) {
+    return null; 
   }
+
   return (
-  <div className="profilePage">
+    <div className="profilePage">
       <div className="details">
         <div className="wrapper">
           <div className="title">
             <h1>User Information</h1>
-            <Link to={'/profile/update'}>
-            <button>Update Profile</button>
+            <Link to={"/profile/update"}>
+              <button>Update Profile</button>
             </Link>
           </div>
           <div className="info">
             <span>
               Avatar:
-              <img
-                src={currentUser.avatar || "/noavatar.jpg"}
-                alt=""
-              />
+              <img src={currentUser.avatar || "/noavatar.jpg"} alt="" />
             </span>
             <span>
               Username: <b>{currentUser.username}</b>
@@ -63,7 +60,7 @@ function ProfilePage() {
       </div>
       <div className="chatContainer">
         <div className="wrapper">
-          <Chat/>
+          <Chat />
         </div>
       </div>
     </div>
